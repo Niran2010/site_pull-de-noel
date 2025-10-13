@@ -1,0 +1,24 @@
+h1{
+    /*centre le texte */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+
+    /*police affreuse*/
+    font-family: 'Dokdo', 'Comic Sans MS', 'Papyrus', fantasy, cursive;
+    font-size: 50px;
+    color: #ff0000; /* vert fluo */
+    background-color: #687c50d0; /* rose fluo */
+    line-height: 0.6;
+    letter-spacing: -2px;
+    word-spacing: 20px;
+    text-shadow: 3px 3px 1px #000, -2px -2px 0 #FFF;
+    transform: rotate(0.5deg);
+    font-weight: 900;
+    font-style: oblique;
+    text-transform: uppercase;
+    text-decoration: underline overline wavy rgb(188, 196, 196);
+    filter: blur(0.8px) contrast(200%) saturate(500%);  
+}
