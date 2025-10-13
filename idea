@@ -123,3 +123,80 @@ function animate() {
 }
 
 animate();
+
+idé 4
+html :
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Vérification d'âge</title>
+<style>
+  #age-verification-popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0,0,0,0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    z-index: 9999;
+    text-align: center;
+    padding: 20px;
+  }
+  #age-verification-popup button {
+    font-size: 2rem;
+    padding: 15px 40px;
+    margin: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    color: white;
+  }
+  #btn-yes {
+    background-color: #f79817;
+  }
+  #btn-no {
+    background-color: #f79817;
+  }
+  #access-denied-img {
+    max-width: 300px;
+    margin-top: 30px;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div id="age-verification-popup">
+  <p>Croyer vous toujours au père Noël ?</p>
+  <div>
+    <button id="btn-yes">Oui j'y crois encore</button>
+    <button id="btn-no">Non je suis trop grand</button>
+  </div>
+  <img id="access-denied-img" src="https://i.imgur.com/oCkEbrA.png" alt="Accès refusé" />
+</div>
+
+<script>
+  const popup = document.getElementById('age-verification-popup');
+  const btnYes = document.getElementById('btn-yes');
+  const btnNo = document.getElementById('btn-no');
+  const deniedImg = document.getElementById('access-denied-img');
+
+  btnYes.addEventListener('click', () => {
+    popup.style.display = 'none'; // Laisse accéder au site
+  });
+
+  btnNo.addEventListener('click', () => {
+    // Cache les boutons et affiche l'image "accès refusé"
+    btnYes.style.display = 'none';
+    btnNo.style.display = 'none';
+    deniedImg.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
