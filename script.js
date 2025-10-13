@@ -40,3 +40,19 @@ function toggleMenu() {
     position = maxPosition;
   }
   });
+
+function showCookieBanner() {
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+
+    banner.style.display = "block";
+
+    acceptBtn.addEventListener("click", () => {
+        // Tu peux stocker l'acceptation si nécessaire, mais ici on ne la vérifie plus
+        localStorage.setItem("cookiesAccepted", "true");
+        banner.style.display = "none";
+    });
+}
+
+// Appeler cette fonction au chargement de la page
+window.addEventListener("DOMContentLoaded", showCookieBanner);
