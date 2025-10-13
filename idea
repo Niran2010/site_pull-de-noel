@@ -1,3 +1,5 @@
+idée 1 hugues : 
+fonction déplacement de id = "box"
 let box = document.getElementById("box");
 let position = 0;
 let speed = 2;
@@ -16,7 +18,8 @@ function animate() {
 
 animate();
 
-
+idée 2 augustin :
+html de teste icon menu :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -94,7 +97,8 @@ animate();
 </body>
 </html>
 
-
+idée 3 :
+noveau js ouverture menu + deplacement icon :
 
 
 function toggleMenu() {
