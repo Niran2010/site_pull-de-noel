@@ -22,3 +22,54 @@ h1{
     text-decoration: underline overline wavy rgb(188, 196, 196);
     filter: blur(0.8px) contrast(200%) saturate(500%);  
 }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Icône burger */
+  .menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 15px;
+    background: rgb(255, 0, 0);
+    color: rgb(102, 255, 0);
+    border: none;
+    position: fixed;
+    top: 45vh;
+    left: 1500px;
+    z-index: 1001;
+  }
+
+  /* Menu caché par défaut */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgb(255, 0, 0);
+    overflow: auto;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 1000;
+  }
+
+  .menu a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: rgb(0, 253, 76);
+    border-bottom: 1px solid rgb(0, 225, 255);
+    transition: background 0.2s;
+  }
+
+  .menu a:hover {
+    background-color: rgb(255, 0, 0);
+  }
+
+  /* Classe active : menu ouvert */
+  .menu.open {
+    left: 0;
+  }
