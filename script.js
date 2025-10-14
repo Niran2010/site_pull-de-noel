@@ -1,3 +1,43 @@
+function afficherImageTemporaire(url) {
+  const img = document.createElement("img");
+  img.src = url;
+  img.alt = "Image temporaire";
+  img.style.position = "fixed";
+  img.style.top = "0";
+  img.style.left = "0";
+  img.style.width = "100vw";
+  img.style.height = "100vh";
+  img.style.objectFit = "cover";  // garde les proportions, recadre si besoin
+  img.style.zIndex = "9999";      // s’affiche au-dessus de tout
+  img.style.pointerEvents = "none"; // évite de bloquer les clics
+
+  document.body.appendChild(img);
+
+  // Retirer l’image après 200 ms
+  setTimeout(() => {
+    img.remove();
+  }, 200);
+}
+
+
+
+const popup = document.getElementById('age-verification-popup');
+const btnYes = document.getElementById('btn-yes');
+const btnNo = document.getElementById('btn-no');
+const deniedImg = document.getElementById('access-denied-img');
+
+btnYes.addEventListener('click', () => {
+  popup.style.display = 'none'; // Laisse accéder au site
+  afficherImageTemporaire("image_liberte.jpg")
+});
+
+btnNo.addEventListener('click', () => {
+  // Cache les boutons et affiche l'image "accès refusé"
+  btnYes.style.display = 'none';
+  btnNo.style.display = 'none';
+  deniedImg.style.display = 'block';
+});
+
 function toggleMenu() {
     const menu = document.getElementById('menu');
     menu.classList.toggle('open');
