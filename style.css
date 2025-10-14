@@ -1,3 +1,39 @@
+#age-verification-popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0,0,0,0.95);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    z-index: 9999;
+    text-align: center;
+    padding: 20px;
+}
+#age-verification-popup button {
+    font-size: 2rem;
+    padding: 15px 40px;
+    margin: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    color: rgb(0,0,0);
+}
+#btn-yes {
+    background-color: #f79817;
+}
+#btn-no {
+    background-color: #f79817;
+}
+#access-denied-img {
+    max-width: 300px;
+    margin-top: 30px;
+    display: none;
+}
+
 h1{
     /*centre le texte */
     display: flex;
