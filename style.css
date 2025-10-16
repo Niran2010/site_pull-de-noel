@@ -60,6 +60,7 @@ h1{
 }
 
 body {
+    overflow: hidden; /* <-- AJOUTEZ CETTE LIGNE */
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -89,7 +90,7 @@ body {
     transform: rotate(360deg);
   }
 }
-  }
+
 
   /* Menu caché par défaut */
 .menu {
@@ -145,4 +146,61 @@ body {
     border:none; 
     border-radius:5px; 
     cursor:pointer;
+}
+
+
+
+/* Conteneur principal pour la neige */
+#snow-container {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+/* Style de base pour chaque flocon */
+.snowflake {
+    position: absolute;
+    /* Important pour ne pas pouvoir cliquer sur les flocons */
+    pointer-events: none; 
+    /* Commence juste au-dessus de l'écran */
+    top: -50px; 
+    /* Applique les deux animations : chute et balancement */
+    animation: fall linear, sway linear infinite;
+}
+
+/* Élément pour afficher le compteur */
+#flake-counter-display {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    z-index: 100;
+}
+
+
+/* --- Animations --- */
+
+/* Animation de la chute (verticale) */
+/* --- Animations --- */
+
+/* CORRECTION : Animation de la chute (verticale) */
+/* On anime la propriété 'top' pour ne pas entrer en conflit avec 'transform' de l'animation sway */
+@keyframes fall {
+    to {
+        top: 100%; /* Le flocon se déplace jusqu'en bas de son conteneur */
+    }
+}
+
+/* Animation du balancement (horizontal) - INCHANGÉE */
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(40px);
+    }
 }
