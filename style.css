@@ -78,6 +78,17 @@ body {
     top: 45vh;
     left: 1500px;
     z-index: 1001;
+    animation: tourner 2s linear infinite;
+}
+
+@keyframes tourner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
   }
 
   /* Menu caché par défaut */
