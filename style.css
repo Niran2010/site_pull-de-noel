@@ -33,6 +33,85 @@
     margin-top: 30px;
     display: none;
 }
+/* CSS */
+/* Conteneur en haut, centré */
+.age-check-header{
+  width: 100%;
+  display: flex;
+  justify-content: center;      /* centre horizontalement */
+  padding: 12px 0;              /* espacement vertical autour du logo */
+  background: transparent;      /* ou #fff si tu veux un fond blanc */
+  z-index: 50;
+  /* si tu veux que la zone soit au-dessus d'autres éléments, laisse z-index */
+}
+
+/* Barre contenant le logo */
+.age-check-header {
+  position: absolute;         /* pour pouvoir le placer précisément */
+  top: 20px;                  /* distance depuis le haut de la page */
+  left: 50%;                  /* centre horizontalement */
+  transform: translateX(-50%);/* recentre le bloc sur l’axe horizontal */
+  background: transparent;    /* pas de fond par défaut */
+  z-index: 100;               /* au-dessus du reste du contenu */
+}
+
+/* Bloc autour du logo (style similaire à Pornhub) */
+.brand {
+  /* MODIFICATIONS POUR LE CENTRAGE HORIZONTAL */
+  display: block;        /* Change en bloc pour que margin: auto fonctionne */
+  margin-left: auto;     /* Pousse l'élément vers le centre */
+  margin-right: auto;    /* Pousse l'élément vers le centre */
+  margin-top: -200px;      /* Ajoute un petit espace en haut de la popup */
+  margin-bottom: 50px;   /* Ajoute un espace sous le logo pour séparer du texte */
+  /* ------------------------------------------- */
+  
+  /* Reste des styles originaux (ou légérement ajustés) */
+  background: #000;
+  padding: 6px 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  text-decoration: none;
+  transition: transform 0.15s ease;
+  height: 150px;               /* taille ajustable */
+  width: 300px;
+}
+
+/* Le reste du CSS (y compris #age-verification-popup) peut rester comme il était */
+/* Image du logo */
+.brand__img {
+  position : center;
+  height: 150px;               /* taille ajustable */
+  width: 300px;
+  display: block;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+/* Effet hover optionnel */
+.brand:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .age-check-header { top: 12px; }
+  .brand { padding: 4px 10px; border-radius: 8px; }
+  .brand__img { height: 36px; }
+}
+
+
+#txt-acce-refuse{
+    display: none;
+    text-align: center;
+    max-width: 90%;          /* évite de dépasser le cadre parent */
+    margin: 0 auto;          /* centre le bloc */
+    word-wrap: break-word;   /* casse les mots trop longs */
+    white-space: normal;    
+}
+
+#question{
+    display: block;
+}
 
 h1{
     /*centre le texte */
