@@ -1,10 +1,21 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #27c631, #a93f33);
-    color: #2c2c2c;
+    font-family: "Comic Sans MS", cursive;
+    background: repeating-linear-gradient(45deg, red, green 10px, yellow 20px, blue 30px);
+    color: hotpink;
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    animation: clignoteFond 1s infinite alternate;
+}
+
+@keyframes clignoteFond {
+    from {
+        filter: hue-rotate(0deg);
+    }
+
+    to {
+        filter: hue-rotate(360deg);
+    }
 }
 
 header {
@@ -25,139 +36,184 @@ header p {
     color: #e7861d;
 }
 
+@keyframes tremble {
+    from {
+        transform: rotate(-2deg);
+    }
+
+    to {
+        transform: rotate(2deg);
+    }
+}
+
+header p {
+    margin-top: 1rem;
+    color: white;
+    background: purple;
+    padding: 10px;
+    border: 3px dashed lime;
+}
+
 .profile-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
-    padding: 2rem;
-    max-width: 1100px;
-    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem;
+    background: url('https://media.giphy.com/media/3oEjHI8nAG8Rf5XWly/giphy.gif');
 }
 
 .profile-card {
-    background: rgb(21, 150, 142);
-    border-radius: 1rem;
+    background: linear-gradient(135deg, fuchsia, aqua);
+    border-radius: 50px;
     text-align: center;
-    padding: 1.5rem;
-    box-shadow: 10px 10px rgb(196, 26, 153);
+    padding: 2rem;
+    border: 10px groove gold;
+    box-shadow: 10px 10px 30px black, -5px -5px 15px red;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-
+    transform: rotate(-3deg);
+    transition: all 0.1s ease-in-out;
 }
 
-
-
 .profile-card:hover {
-    transform: scale(1.2);
-    box-shadow: 0 6px 16px rgba(239, 14, 14, 0.591);
+    transform: rotate(5deg) scale(1.4);
+    box-shadow: 0 0 50px lime;
+    filter: invert(1);
 }
 
 .profile-card img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 1rem;
+    width: 150px;
+    height: 150px;
+    border: 8px ridge magenta;
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .profile-card h2 {
-    margin: 0;
-    color: #10da21ef;
+    color: yellow;
+    text-shadow: 3px 3px 2px red;
+    font-size: 2rem;
+    margin: 0.5rem 0;
 }
 
 .profile-card h4 {
-    margin: 0;
-    color: darkred;
+    color: lime;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .profile-card p {
-    color: #555;
-    font-size: 0.9rem;
+    color: white;
+    font-size: 1rem;
+    background: rgba(255, 0, 255, 0.5);
+    padding: 0.5rem;
+    border: 3px double cyan;
 }
 
 .modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: repeating-radial-gradient(circle, red, orange, yellow, green, blue, violet);
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 100;
+    animation: flash 0.3s infinite alternate;
 }
 
-.modal-content {
-    background: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    animation: pop 0.4s ease;
-}
-
-@keyframes pop {
+@keyframes flash {
     from {
-        transform: scale(0.8);
-        opacity: 0;
+        opacity: 1;
     }
 
     to {
-        transform: scale(1);
-        opacity: 1;
+        opacity: 0.6;
     }
+}
+
+.modal-content {
+    background: pink;
+    border-radius: 2rem;
+    padding: 2rem;
+    border: 10px solid cyan;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 40px yellow;
+    animation: pop 0.4s ease;
 }
 
 .close {
     position: absolute;
     top: 1rem;
-    right: 1.5rem;
-    font-size: 1.8rem;
+    right: 2rem;
+    font-size: 3rem;
     cursor: pointer;
-    color: #aaa;
-}
-
-.close:hover {
-    color: #c1121f;
-}
-
-.skills {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    color: red;
+    background: yellow;
+    border-radius: 50%;
+    padding: 0.5rem 1rem;
+    border: 3px dashed green;
+    transform: rotate(-15deg);
 }
 
 .skills span {
-    background: #ffe4e1;
-    color: #c1121f;
-    padding: 0.3rem 0.7rem;
-    border-radius: 9999px;
-    font-size: 0.8rem;
-    border: 1px solid #c1121f;
+    background: lime;
+    color: blue;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    border: 3px solid magenta;
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
 }
 
 .select-btn {
-    margin-top: 1.5rem;
-    background: #c1121f;
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 0.5rem;
+    background: linear-gradient(45deg, red, yellow, green);
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 5px inset blue;
+    border-radius: 0;
+    padding: 1rem 2rem;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
+    text-transform: uppercase;
+    animation: blink 0.5s infinite alternate;
 }
 
-.select-btn:hover {
-    background: #a50e18;
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.3;
+    }
 }
 
 footer {
     text-align: center;
-    padding: 1rem;
-    background: #c1121f;
-    color: white;
-    font-size: 0.9rem;
+    padding: 2rem;
+    background: repeating-linear-gradient(45deg, lime, red 10px, yellow 20px);
+    color: black;
+    font-size: 1.5rem;
+    border-top: 10px double cyan;
+    text-shadow: 2px 2px 5px white;
 }
