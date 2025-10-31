@@ -1,0 +1,163 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #27c631, #a93f33);
+    color: #2c2c2c;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #211b4d;
+    color: rgb(239, 235, 14);
+    border-bottom: 4px solid #653943cc;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+header p {
+    margin-top: 0.5rem;
+    color: #e7861d;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.profile-card {
+    background: rgb(21, 150, 142);
+    border-radius: 1rem;
+    text-align: center;
+    padding: 1.5rem;
+    box-shadow: 10px 10px rgb(196, 26, 153);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+
+
+.profile-card:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 16px rgba(239, 14, 14, 0.591);
+}
+
+.profile-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.profile-card h2 {
+    margin: 0;
+    color: #10da21ef;
+}
+
+.profile-card h4 {
+    margin: 0;
+    color: darkred;
+}
+
+.profile-card p {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close:hover {
+    color: #c1121f;
+}
+
+.skills {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skills span {
+    background: #ffe4e1;
+    color: #c1121f;
+    padding: 0.3rem 0.7rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    border: 1px solid #c1121f;
+}
+
+.select-btn {
+    margin-top: 1.5rem;
+    background: #c1121f;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.select-btn:hover {
+    background: #a50e18;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #c1121f;
+    color: white;
+    font-size: 0.9rem;
+}
